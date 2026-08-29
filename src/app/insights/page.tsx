@@ -16,16 +16,18 @@ export default function InsightsPage() {
   return (
     <main>
       <section className="relative overflow-hidden border-b border-white/10">
-        <div className="tech-grid absolute inset-0 opacity-70" aria-hidden="true" />
+        <div
+          className="tech-grid absolute inset-0 opacity-70"
+          aria-hidden="true"
+        />
         <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Insights"
             title="Pensamentos sobre tecnologia, IA e produto."
           >
             <p>
-              Notas, aprendizados e opiniões de quem continua construindo.
-              Arquitetura preparada para evoluir para MDX quando os artigos
-              definitivos entrarem no site.
+              Notas, aprendizados e opiniões de quem continua construindo. Os
+              artigos entram aqui quando houver conteúdo publicado.
             </p>
           </SectionHeading>
         </div>

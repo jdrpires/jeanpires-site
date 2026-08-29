@@ -4,87 +4,95 @@ import {
   ArrowDownRight,
   ArrowRight,
   BrainCircuit,
-  Building2,
   Cpu,
   Layers3,
   Network,
   Route,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 import { ContactBand } from "@/components/contact-band";
 import { InsightList } from "@/components/insight-list";
 import { ProjectGrid } from "@/components/project-grid";
 import { SectionHeading } from "@/components/section-heading";
-
-const currentWork = [
-  {
-    company: "Code Synergy",
-    role: "Founder",
-    description:
-      "Tecnologia, desenvolvimento de produtos digitais, inteligência artificial aplicada e transformação de ideias em software.",
-  },
-  {
-    company: "PlugZ",
-    role: "CTO",
-    description:
-      "Estratégia tecnológica, produtos, plataformas e infraestrutura para um ecossistema conectado ao mercado de franquias.",
-  },
-  {
-    company: "IAHub — ONOVOLAB",
-    role: "IA aplicada",
-    description:
-      "Ambiente de experimentação, desenvolvimento e aplicação prática de inteligência artificial.",
-  },
-];
+import { heroImage } from "@/config/assets";
+import { currentWork } from "@/data/current-work";
+import { findLogoPath, publicAssetExists } from "@/lib/public-assets";
 
 const services = [
   {
     title: "IA Aplicada",
     description:
-      "Transformação de processos e produtos utilizando inteligência artificial de forma prática.",
+      "Uso de inteligência artificial para melhorar produtos, processos e decisões, com foco em aplicação prática.",
     icon: BrainCircuit,
   },
   {
     title: "Produtos Digitais",
-    description: "Da ideia à arquitetura, desenvolvimento e operação.",
+    description:
+      "Estratégia, arquitetura e desenvolvimento para transformar uma ideia em produto em operação.",
     icon: Layers3,
   },
   {
     title: "Estratégia Tecnológica",
     description:
-      "Decisões técnicas alinhadas ao momento e aos objetivos do negócio.",
+      "Decisões de tecnologia conectadas ao momento, restrições e objetivos do negócio.",
     icon: Route,
   },
   {
     title: "Arquitetura & Engenharia",
-    description: "Sistemas escaláveis, seguros e preparados para evoluir.",
+    description:
+      "Sistemas seguros, escaláveis e preparados para evoluir sem criar complexidade desnecessária.",
     icon: Network,
   },
   {
     title: "CTO as a Service",
     description:
-      "Liderança tecnológica para empresas que precisam de direção técnica sem estruturar uma cadeira executiva interna desde o início.",
+      "Direção tecnológica para empresas que precisam de liderança técnica e executiva sem estruturar uma cadeira de CTO interna desde o início.",
     icon: ShieldCheck,
   },
 ];
 
+function WorkLogo({ item }: { item: (typeof currentWork)[number] }) {
+  const logoPath = findLogoPath(item.logoBasePath);
+
+  if (logoPath) {
+    return (
+      <Image
+        src={logoPath}
+        alt={`Logo ${item.company}`}
+        width={160}
+        height={48}
+        className="max-h-12 w-auto object-contain"
+        unoptimized={logoPath.endsWith(".svg")}
+      />
+    );
+  }
+
+  return (
+    <div className="flex h-12 min-w-12 items-center justify-center rounded-md border border-white/10 bg-slate-950/45 px-3 text-sm font-semibold tracking-[0.16em] text-cyan-100">
+      {item.fallbackMark}
+    </div>
+  );
+}
+
 export default function Home() {
+  const portraitSrc = publicAssetExists(heroImage.primary)
+    ? heroImage.primary
+    : heroImage.fallback;
+
   return (
     <main>
       <section className="relative overflow-hidden">
-        <div className="tech-grid absolute inset-0 opacity-80" aria-hidden="true" />
-        <div className="absolute left-1/2 top-24 h-px w-[42rem] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-300/45 to-transparent" />
-        <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl items-center gap-12 px-5 pb-16 pt-16 sm:px-6 lg:grid-cols-[1.04fr_0.72fr] lg:px-8">
+        <div
+          className="tech-grid absolute inset-0 opacity-50"
+          aria-hidden="true"
+        />
+        <div className="absolute right-0 top-16 h-px w-2/3 bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent" />
+        <div className="mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl items-center gap-10 px-5 pb-12 pt-14 sm:px-6 md:pb-16 md:pt-18 lg:grid-cols-[1.06fr_0.7fr] lg:gap-14 lg:px-8">
           <div className="relative z-10">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.035] px-3 py-2 text-sm text-slate-300">
-              <Sparkles className="size-4 text-cyan-200" aria-hidden="true" />
-              IA aplicada, produto e engenharia em operação
-            </div>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl">
               Tecnologia para transformar negócios.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9">
               IA aplicada, produtos digitais e estratégia tecnológica para tirar
               ideias do papel e colocá-las em operação.
             </p>
@@ -113,24 +121,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative z-10 mx-auto w-full max-w-md lg:max-w-none">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/12 bg-[#091120]">
+          <div className="relative z-10 mx-auto w-full max-w-[15.5rem] sm:max-w-sm lg:max-w-none">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-[#091120] shadow-2xl shadow-black/20 ring-1 ring-white/10">
               <Image
-                src="/jean-placeholder.jpg"
-                alt="Placeholder para futura fotografia profissional de Jean Pires"
+                src={portraitSrc}
+                alt={heroImage.alt}
                 fill
                 priority
                 sizes="(min-width: 1024px) 38vw, 90vw"
-                className="object-cover"
+                className="object-cover object-center"
               />
-              <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-slate-950/72 p-5 backdrop-blur-md">
-                <p className="text-sm font-medium text-white">
-                  Foto profissional em breve
-                </p>
-                <p className="mt-1 text-xs text-slate-400">
-                  Área preparada para receber a imagem definitiva.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -152,10 +152,10 @@ export default function Home() {
             </p>
             <p className="mt-5">
               Ao longo dessa trajetória, tecnologia deixou de ser apenas código
-              e passou a ser uma forma de transformar operações, produtos e
-              modelos de negócio. Hoje sua atuação combina engenharia,
-              inteligência artificial aplicada e estratégia para construir
-              soluções que efetivamente chegam à operação.
+              e passou a ser uma ferramenta para transformar operações, produtos
+              e modelos de negócio. Hoje sua atuação combina engenharia,
+              inteligência artificial aplicada, produto e estratégia para
+              transformar problemas reais em soluções que chegam à operação.
             </p>
           </SectionHeading>
         </div>
@@ -173,8 +173,8 @@ export default function Home() {
                 key={item.company}
                 className="rounded-lg border border-white/10 bg-white/[0.03] p-6"
               >
-                <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-md border border-white/10 bg-slate-950/50">
-                  <Building2 className="size-5 text-cyan-200" aria-hidden="true" />
+                <div className="mb-8 flex h-14 items-center">
+                  <WorkLogo item={item} />
                 </div>
                 <h3 className="text-xl font-semibold text-white">
                   {item.company}

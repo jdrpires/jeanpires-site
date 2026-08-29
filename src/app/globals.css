@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 3px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -17,8 +22,16 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 20% 0%, rgba(28, 116, 210, 0.18), transparent 32rem),
-    radial-gradient(circle at 88% 14%, rgba(117, 82, 199, 0.18), transparent 28rem),
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(28, 116, 210, 0.18),
+      transparent 32rem
+    ),
+    radial-gradient(
+      circle at 88% 14%,
+      rgba(117, 82, 199, 0.18),
+      transparent 28rem
+    ),
     var(--background);
   color: var(--foreground);
   font-family:
@@ -36,6 +49,11 @@ a {
   text-decoration: none;
 }
 
+img,
+svg {
+  max-width: 100%;
+}
+
 ::selection {
   background: rgba(103, 232, 249, 0.26);
   color: #ffffff;
@@ -47,4 +65,19 @@ a {
     linear-gradient(90deg, rgba(148, 163, 184, 0.075) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

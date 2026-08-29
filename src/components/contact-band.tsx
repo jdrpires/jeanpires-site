@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { socialLinks } from "@/config/social";
+import { configuredSocialLinks } from "@/config/social";
 
 export function ContactBand() {
   return (
@@ -24,24 +24,25 @@ export function ContactBand() {
             <ArrowUpRight className="size-4" aria-hidden="true" />
           </Link>
           <div className="grid gap-3 sm:grid-cols-2">
-            {socialLinks.map(({ label, href, icon: Icon, handle }) => (
-              <Link
-                key={label}
-                href={href ?? "#"}
-                aria-disabled={!href}
-                className="flex min-h-14 items-center gap-3 rounded-md border border-white/10 bg-white/[0.025] px-4 text-sm text-slate-300 transition hover:border-cyan-300/30 hover:text-white aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                target={href ? "_blank" : undefined}
-                rel={href ? "noreferrer" : undefined}
-              >
-                <Icon className="size-4 text-cyan-200" aria-hidden="true" />
-                <span>
-                  <span className="block font-medium text-slate-100">
-                    {label}
+            {configuredSocialLinks.map(
+              ({ label, href, icon: Icon, handle }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="flex min-h-14 items-center gap-3 rounded-md border border-white/10 bg-white/[0.025] px-4 text-sm text-slate-300 transition hover:border-cyan-300/30 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Icon className="size-4 text-cyan-200" aria-hidden="true" />
+                  <span>
+                    <span className="block font-medium text-slate-100">
+                      {label}
+                    </span>
+                    <span className="text-xs text-slate-500">{handle}</span>
                   </span>
-                  <span className="text-xs text-slate-500">{handle}</span>
-                </span>
-              </Link>
-            ))}
+                </Link>
+              ),
+            )}
           </div>
         </div>
       </div>

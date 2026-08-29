@@ -8,18 +8,16 @@ export type SocialLink = {
   handle?: string;
 };
 
-export const socialLinks = [
+export const socialLinks: SocialLink[] = [
   {
     label: "WhatsApp",
     href: null,
     icon: MessageCircle,
-    handle: "TODO",
   },
   {
     label: "LinkedIn",
     href: null,
     icon: Link,
-    handle: "TODO",
   },
   {
     label: "Instagram",
@@ -37,6 +35,9 @@ export const socialLinks = [
     label: "E-mail",
     href: null,
     icon: Mail,
-    handle: "TODO",
   },
-] satisfies SocialLink[];
+];
+
+export const configuredSocialLinks = socialLinks.filter(
+  (link): link is SocialLink & { href: string } => Boolean(link.href),
+);

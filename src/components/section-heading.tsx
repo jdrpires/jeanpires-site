@@ -4,7 +4,11 @@ type SectionHeadingProps = {
   children?: React.ReactNode;
 };
 
-export function SectionHeading({ eyebrow, title, children }: SectionHeadingProps) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  children,
+}: SectionHeadingProps) {
   return (
     <div className="max-w-3xl">
       {eyebrow ? (

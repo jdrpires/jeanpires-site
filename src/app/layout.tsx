@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { configuredSocialLinks } from "@/config/social";
+import { sameAsSocialLinks } from "@/config/social";
 
 const title = "Jean Pires | Tecnologia, IA Aplicada e Produtos Digitais";
 const description =
@@ -69,7 +69,7 @@ export default function RootLayout({
         name: "IAHub - ONOVOLAB",
       },
     ],
-    sameAs: configuredSocialLinks.map((link) => link.href),
+    sameAs: sameAsSocialLinks.map((link) => link.href),
     knowsAbout: [
       "Tecnologia",
       "Inteligência Artificial aplicada",

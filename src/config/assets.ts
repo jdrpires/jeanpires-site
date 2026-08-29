@@ -1,6 +1,5 @@
 export const heroImage = {
-  primary: "/images/jean-pires.jpg",
-  fallback: "/jean-placeholder.jpg",
+  src: "/images/jean-pires.jpg",
   alt: "Jean Pires",
 };
 

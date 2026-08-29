@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { socialLinks } from "@/config/social";
+import { configuredSocialLinks } from "@/config/social";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -15,20 +15,18 @@ export function Footer() {
           <p className="mt-3 text-xs text-slate-500">© {year} Jean Pires.</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          {socialLinks.map(({ label, href, icon: Icon }) =>
-            href ? (
-              <Link
-                key={label}
-                href={href}
-                className="grid size-9 place-items-center rounded-md border border-white/10 text-slate-400 transition hover:border-cyan-300/40 hover:text-white"
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-              >
-                <Icon className="size-4" aria-hidden="true" />
-              </Link>
-            ) : null,
-          )}
+          {configuredSocialLinks.map(({ label, href, icon: Icon }) => (
+            <Link
+              key={label}
+              href={href}
+              className="grid size-9 place-items-center rounded-md border border-white/10 text-slate-400 transition hover:border-cyan-300/40 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+            >
+              <Icon className="size-4" aria-hidden="true" />
+            </Link>
+          ))}
         </div>
       </div>
     </footer>

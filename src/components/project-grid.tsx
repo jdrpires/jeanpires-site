@@ -25,8 +25,12 @@ export function ProjectGrid({ limit }: ProjectGridProps) {
                 aria-hidden="true"
               />
             </div>
-            <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-            <p className="mt-4 leading-7 text-slate-300">{project.description}</p>
+            <h3 className="text-xl font-semibold text-white">
+              {project.title}
+            </h3>
+            <p className="mt-4 leading-7 text-slate-300">
+              {project.description}
+            </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-2">
             {project.stack.map((item) => (

@@ -16,7 +16,7 @@ import { ProjectGrid } from "@/components/project-grid";
 import { SectionHeading } from "@/components/section-heading";
 import { heroImage } from "@/config/assets";
 import { currentWork } from "@/data/current-work";
-import { findLogoPath, publicAssetExists } from "@/lib/public-assets";
+import { findLogoPath } from "@/lib/public-assets";
 
 const services = [
   {
@@ -58,11 +58,13 @@ function WorkLogo({ item }: { item: (typeof currentWork)[number] }) {
     return (
       <Image
         src={logoPath}
-        alt={`Logo ${item.company}`}
-        width={160}
-        height={48}
-        className="max-h-12 w-auto object-contain"
-        unoptimized={logoPath.endsWith(".svg")}
+        alt={item.logoAlt}
+        width={176}
+        height={64}
+        sizes="176px"
+        className="h-auto max-h-12 w-auto max-w-[10.5rem] object-contain"
+        style={{ transform: `scale(${item.logoScale})` }}
+        unoptimized
       />
     );
   }
@@ -75,10 +77,6 @@ function WorkLogo({ item }: { item: (typeof currentWork)[number] }) {
 }
 
 export default function Home() {
-  const portraitSrc = publicAssetExists(heroImage.primary)
-    ? heroImage.primary
-    : heroImage.fallback;
-
   return (
     <main>
       <section className="relative overflow-hidden">
@@ -124,12 +122,12 @@ export default function Home() {
           <div className="relative z-10 mx-auto w-full max-w-[15.5rem] sm:max-w-sm lg:max-w-none">
             <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-[#091120] shadow-2xl shadow-black/20 ring-1 ring-white/10">
               <Image
-                src={portraitSrc}
+                src={heroImage.src}
                 alt={heroImage.alt}
                 fill
                 priority
                 sizes="(min-width: 1024px) 38vw, 90vw"
-                className="object-cover object-center"
+                className="object-cover object-[58%_26%]"
               />
             </div>
           </div>
@@ -173,8 +171,10 @@ export default function Home() {
                 key={item.company}
                 className="rounded-lg border border-white/10 bg-white/[0.03] p-6"
               >
-                <div className="mb-8 flex h-14 items-center">
-                  <WorkLogo item={item} />
+                <div className="mb-8 flex h-16 items-center">
+                  <div className="inline-flex h-16 w-36 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white px-4 py-2">
+                    <WorkLogo item={item} />
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-white">
                   {item.company}

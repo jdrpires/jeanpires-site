@@ -8,6 +8,7 @@ import { navigation } from "@/data/navigation";
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const menuId = useId();
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -17,7 +18,9 @@ export function MobileNav() {
 
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
+        event.preventDefault();
         setIsOpen(false);
+        requestAnimationFrame(() => buttonRef.current?.focus());
       }
     }
 
@@ -37,6 +40,7 @@ export function MobileNav() {
   return (
     <div className="lg:hidden">
       <button
+        ref={buttonRef}
         type="button"
         className="grid size-10 place-items-center rounded-md border border-white/10 bg-white/[0.03] text-slate-100 transition hover:border-cyan-300/40 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
         aria-label={isOpen ? "Fechar menu" : "Abrir menu"}

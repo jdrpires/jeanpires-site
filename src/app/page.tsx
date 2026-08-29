@@ -172,7 +172,7 @@ export default function Home() {
                 className="rounded-lg border border-white/10 bg-white/[0.03] p-6"
               >
                 <div className="mb-8 flex h-16 items-center">
-                  <div className="inline-flex h-16 w-36 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white px-4 py-2">
+                  <div className="inline-flex h-16 w-36 items-center justify-center overflow-hidden">
                     <WorkLogo item={item} />
                   </div>
                 </div>

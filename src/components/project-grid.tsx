@@ -36,12 +36,7 @@ function ProjectCard({ project }: { project: ProjectCase }) {
             >
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </Link>
-          ) : (
-            <ArrowUpRight
-              className="size-4 text-slate-500 transition group-hover:text-cyan-200"
-              aria-hidden="true"
-            />
-          )}
+          ) : null}
         </div>
         <h3 className="text-xl font-semibold text-white">{project.title}</h3>
         {project.tagline ? (

@@ -3,4 +3,11 @@ export const heroImage = {
   alt: "Jean Pires",
 };
 
-export const supportedLogoExtensions = ["svg", "png", "jpg", "jpeg", "webp"];
+export const supportedLogoExtensions = [
+  "svg",
+  "png",
+  "jpg",
+  "jpeg",
+  "webp",
+  "avif",
+];

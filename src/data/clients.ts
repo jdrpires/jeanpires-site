@@ -12,9 +12,46 @@ export type Client = {
 /**
  * Lista de clientes/empresas atendidas.
  *
- * Intencionalmente vazia: nenhum cliente foi oficialmente aprovado para
- * exibição nesta etapa. A seção de clientes na Home só é renderizada quando
- * existir pelo menos um item aqui, permitindo adicionar nomes e assets depois
- * sem alterar o layout.
+ * Apenas empresas explicitamente autorizadas para publicação. A seção de
+ * clientes na Home só renderiza itens cujo asset de logo exista de fato em
+ * `public/logos/clients/` (resolvido em runtime via findLogoPath), portanto
+ * um cliente sem asset presente não é exibido e não quebra o layout.
  */
-export const clients: Client[] = [];
+export const clients: Client[] = [
+  {
+    name: "FUNDAGRES",
+    logo: "/logos/clients/fundagres",
+    url: null,
+    featured: true,
+  },
+  {
+    name: "TEBASFIN",
+    logo: "/logos/clients/tebasfin",
+    url: null,
+    featured: true,
+  },
+  {
+    name: "ALECO",
+    logo: "/logos/clients/aleco",
+    url: null,
+    featured: true,
+  },
+  {
+    name: "DATALAND",
+    logo: "/logos/clients/dataland",
+    url: null,
+    featured: true,
+  },
+  {
+    name: "No Divã",
+    logo: "/logos/clients/no-diva",
+    url: null,
+    featured: true,
+  },
+  {
+    name: "One Six",
+    logo: "/logos/clients/one-six",
+    url: null,
+    featured: true,
+  },
+];

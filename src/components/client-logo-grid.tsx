@@ -17,10 +17,13 @@ function ClientLogo({ client }: { client: Client }) {
       width={176}
       height={64}
       sizes="176px"
-      className="h-auto max-h-12 w-auto max-w-[10.5rem] object-contain"
+      className="h-auto max-h-14 w-auto max-w-[8.5rem] object-contain"
       unoptimized
     />
   );
+
+  const surfaceClasses =
+    "flex h-24 w-full items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] p-4";
 
   if (client.url) {
     return (
@@ -28,19 +31,14 @@ function ClientLogo({ client }: { client: Client }) {
         href={client.url}
         target="_blank"
         rel="noreferrer"
-        aria-label={client.name}
-        className="inline-flex h-16 w-36 items-center justify-center transition hover:opacity-80"
+        className={`${surfaceClasses} transition hover:border-cyan-300/35 hover:bg-white/[0.06]`}
       >
         {logo}
       </Link>
     );
   }
 
-  return (
-    <div className="inline-flex h-16 w-36 items-center justify-center">
-      {logo}
-    </div>
-  );
+  return <div className={surfaceClasses}>{logo}</div>;
 }
 
 export function ClientLogoGrid() {
@@ -53,7 +51,7 @@ export function ClientLogoGrid() {
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-x-10 gap-y-6">
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
       {visibleClients.map((client) => (
         <ClientLogo key={client.name} client={client} />
       ))}

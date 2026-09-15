@@ -23,11 +23,11 @@ export default function ProjectsPage() {
         <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Projetos"
-            title="Algumas coisas que estou construindo."
+            title="Produtos e projetos que estou construindo."
           >
             <p>
-              Áreas de trabalho e construção que serão detalhadas como cases
-              quando houver material público suficiente.
+              Tecnologia aplicada a problemas reais — de plataformas B2B a
+              inteligência veicular, governança e novos produtos digitais.
             </p>
           </SectionHeading>
         </div>

@@ -11,6 +11,10 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { ContactBand } from "@/components/contact-band";
+import {
+  ClientLogoGrid,
+  hasVisibleClients,
+} from "@/components/client-logo-grid";
 import { InsightList } from "@/components/insight-list";
 import { ProjectGrid } from "@/components/project-grid";
 import { SectionHeading } from "@/components/section-heading";
@@ -236,6 +240,22 @@ export default function Home() {
           <ProjectGrid limit={3} />
         </div>
       </section>
+
+      {hasVisibleClients() ? (
+        <section className="border-t border-white/10 bg-[#070b16]">
+          <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8">
+            <SectionHeading
+              eyebrow="Clientes"
+              title="Empresas com quem já construí."
+            >
+              <p>Tecnologia ganha valor quando chega à operação.</p>
+            </SectionHeading>
+            <div className="mt-12">
+              <ClientLogoGrid />
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="border-t border-white/10 bg-[#070b16]">
         <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8">

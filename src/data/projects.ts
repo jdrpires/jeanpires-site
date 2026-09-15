@@ -1,57 +1,58 @@
 export type ProjectCase = {
+  slug: string;
   title: string;
+  tagline: string;
   description: string;
   category: string;
+  status: string;
+  role?: string;
   stack: string[];
   image: string | null;
   url?: string | null;
+  github?: string | null;
   featured: boolean;
 };
 
 export const projectCases: ProjectCase[] = [
   {
-    title: "Plataformas para redes de franquias",
+    slug: "horizon",
+    title: "Horizon",
+    tagline: "Inteligência veicular e diagnóstico conectado.",
     description:
-      "Estruturas digitais para conectar marcas, unidades, indicadores e rotinas de gestão em operações distribuídas.",
+      "Plataforma que conecta veículo, aplicativo e serviços de backend para transformar dados automotivos em diagnóstico, histórico e inteligência preventiva.",
+    category: "Produto / Mobilidade",
+    status: "Em desenvolvimento",
+    stack: ["Android", "OBD", "FastAPI", "Edge / Gateway"],
+    image: null,
+    url: null,
+    github: null,
+    featured: true,
+  },
+  {
+    slug: "governance-hub",
+    title: "Governance Hub",
+    tagline: "Governança, documentos e obrigações em uma única plataforma.",
+    description:
+      "Plataforma para centralizar documentos, responsabilidades, obrigações e acompanhamento executivo de governança em ambientes multiempresa.",
     category: "Produto B2B",
-    stack: ["SaaS", "Arquitetura", "Integrações"],
+    status: "Em desenvolvimento",
+    stack: ["Governança", "Multi-tenant", "RBAC", "Cloud"],
     image: null,
+    url: null,
+    github: null,
     featured: true,
   },
   {
-    title: "Produtos financeiros e integrações",
-    description:
-      "Integrações e fluxos que aproximam jornadas comerciais, pagamentos, dados e automação operacional.",
-    category: "Integrações",
-    stack: ["APIs", "Back-end", "Dados"],
+    slug: "flowdash",
+    title: "FlowDash",
+    tagline: "",
+    description: "Produto digital em desenvolvimento. Mais detalhes em breve.",
+    category: "Produto",
+    status: "Em desenvolvimento",
+    stack: [],
     image: null,
+    url: null,
+    github: null,
     featured: true,
-  },
-  {
-    title: "Inteligência artificial aplicada",
-    description:
-      "Experimentação e entrega de fluxos com IA orientados a contexto de negócio, uso real e operação diária.",
-    category: "IA aplicada",
-    stack: ["LLMs", "Automação", "Produto"],
-    image: null,
-    featured: true,
-  },
-  {
-    title: "Automação de operações",
-    description:
-      "Mapeamento de processos e construção de ferramentas para reduzir atrito, retrabalho e dependência manual.",
-    category: "Automação",
-    stack: ["Workflows", "Integrações", "Observabilidade"],
-    image: null,
-    featured: false,
-  },
-  {
-    title: "Plataformas B2B",
-    description:
-      "Produtos para ambientes com múltiplos usuários, permissões, jornadas internas e evolução contínua.",
-    category: "B2B",
-    stack: ["Produto", "Cloud", "Engenharia"],
-    image: null,
-    featured: false,
   },
 ];

@@ -1,7 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
   AtSign,
-  Github,
   Hash,
   Link,
   Mail,
@@ -34,7 +33,7 @@ export const socialLinks: SocialLink[] = [
   {
     label: "GitHub",
     href: "https://github.com/jdrpires",
-    icon: Github,
+    icon: Link,
     handle: "@jdrpires",
     sameAs: true,
   },

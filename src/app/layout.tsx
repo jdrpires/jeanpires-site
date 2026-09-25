@@ -4,9 +4,10 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { sameAsSocialLinks } from "@/config/social";
 
-const title = "Jean Pires | Tecnologia, IA Aplicada e Produtos Digitais";
+const title =
+  "Jean Pires | Founder, CTO, Arquitetura de Software e IA Aplicada";
 const description =
-  "Tecnologia, inteligência artificial aplicada e produtos digitais para transformar ideias e desafios de negócio em soluções reais.";
+  "Founder da Code Synergy e CTO da PlugZ. Arquitetura de software, IA aplicada, fintech, produtos digitais, integrações enterprise e liderança tecnológica.";
 const siteUrl = "https://jeanpires.com.br";
 
 export const metadata: Metadata = {
@@ -54,7 +55,12 @@ export default function RootLayout({
     "@type": "Person",
     name: "Jean Pires",
     url: siteUrl,
-    jobTitle: ["Founder", "CTO"],
+    jobTitle: [
+      "Founder & CEO",
+      "CTO",
+      "Software Architect",
+      "AI Hub Leader",
+    ],
     worksFor: [
       {
         "@type": "Organization",
@@ -71,10 +77,13 @@ export default function RootLayout({
     ],
     sameAs: sameAsSocialLinks.map((link) => link.href),
     knowsAbout: [
-      "Tecnologia",
-      "Inteligência Artificial aplicada",
-      "Produtos Digitais",
       "Arquitetura de Software",
+      "Inteligência Artificial Aplicada",
+      "Produtos Digitais",
+      "Fintech e Pagamentos",
+      "Integrações Enterprise",
+      "Cloud Architecture",
+      "Automotive e Edge Computing",
       "Estratégia Tecnológica",
       "Liderança Técnica",
     ],

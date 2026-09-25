@@ -99,11 +99,11 @@ export default function Home() {
               ideias do papel e colocá-las em operação.
             </p>
             <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-medium text-slate-300">
-              <span>Founder Code Synergy</span>
+              <span>Founder &amp; CEO Code Synergy</span>
               <span className="text-cyan-300">•</span>
               <span>CTO PlugZ</span>
               <span className="text-cyan-300">•</span>
-              <span>IAHub ONOVOLAB</span>
+              <span>AI Hub Leader · ONOVOLAB</span>
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -227,7 +227,7 @@ export default function Home() {
           <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <SectionHeading
               eyebrow="Projetos"
-              title="Algumas coisas que estou construindo."
+              title="Produtos e plataformas em que estou construindo."
             />
             <Link
               href="/projetos"

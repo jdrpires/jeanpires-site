@@ -39,8 +39,13 @@ function ProjectCard({ project }: { project: ProjectCase }) {
           ) : null}
         </div>
         <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+        {project.role ? (
+          <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-violet-200">
+            {project.role}
+          </p>
+        ) : null}
         {project.tagline ? (
-          <p className="mt-2 text-sm leading-6 text-cyan-100/90">
+          <p className="mt-3 text-sm leading-6 text-cyan-100/90">
             {project.tagline}
           </p>
         ) : null}
@@ -55,6 +60,18 @@ function ProjectCard({ project }: { project: ProjectCase }) {
             />
             {project.status}
           </span>
+          {project.caseUrl ? (
+            <Link
+              href={project.caseUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Ver case técnico de ${project.title}`}
+              className="inline-flex items-center gap-1.5 rounded border border-cyan-300/20 bg-cyan-300/[0.05] px-2.5 py-1 text-xs text-cyan-200 transition hover:border-cyan-300/40"
+            >
+              Case técnico
+              <ArrowUpRight className="size-3" aria-hidden="true" />
+            </Link>
+          ) : null}
           {project.github ? (
             <Link
               href={project.github}

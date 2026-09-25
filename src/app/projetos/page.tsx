@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/section-heading";
 export const metadata: Metadata = {
   title: "Projetos | Jean Pires",
   description:
-    "Cases e projetos em tecnologia, produtos digitais, IA aplicada, automação e plataformas B2B.",
+    "Produtos, plataformas e cases em IA aplicada, arquitetura de software, fintech, integrações, mobilidade e operações digitais.",
   alternates: {
     canonical: "/projetos",
   },
@@ -23,11 +23,12 @@ export default function ProjectsPage() {
         <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Projetos"
-            title="Produtos e projetos que estou construindo."
+            title="Produtos, plataformas e sistemas que conectam tecnologia ao negócio."
           >
             <p>
-              Tecnologia aplicada a problemas reais — de plataformas B2B a
-              inteligência veicular, governança e novos produtos digitais.
+              Uma seleção de iniciativas em que atuo como criador, sócio, CTO,
+              arquiteto ou líder de entrega — de mobilidade conectada e fintech
+              a integrações enterprise, governança e operações digitais.
             </p>
           </SectionHeading>
         </div>

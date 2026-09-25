@@ -241,6 +241,59 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-y border-white/10 bg-[#080d19]">
+        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8">
+          <div className="rounded-xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.07] via-white/[0.025] to-violet-300/[0.06] p-6 sm:p-8 lg:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+              Case em destaque · Cultura &amp; Tecnologia
+            </p>
+            <div className="mt-6 grid gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+              <div>
+                <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+                  Palavras que Encantam
+                </h2>
+                <p className="mt-3 text-sm font-medium text-violet-200">
+                  No Divã Treinamentos
+                </p>
+                <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+                  Da inscrição à avaliação: uma operação cultural transformada
+                  em plataforma digital segura, rastreável e preparada para
+                  escala, apoiando a execução e a governança de uma iniciativa
+                  realizada com mecanismos de incentivo à cultura.
+                </p>
+                <Link
+                  href="https://github.com/jdrpires/jdrpires/blob/main/portfolio/no-diva.md"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 transition hover:text-cyan-100"
+                >
+                  Ver case técnico
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  ["116+", "inscrições"],
+                  ["6", "etapas"],
+                  ["Backoffice", "administração"],
+                  ["Jurados", "avaliação"],
+                  ["RLS", "controle de acesso"],
+                  ["Auditável", "rastreabilidade"],
+                ].map(([value, label]) => (
+                  <div
+                    key={value}
+                    className="rounded-lg border border-white/10 bg-slate-950/35 p-4"
+                  >
+                    <p className="text-lg font-semibold text-white">{value}</p>
+                    <p className="mt-1 text-xs text-slate-400">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {hasVisibleClients() ? (
         <section className="border-t border-white/10 bg-[#070b16]">
           <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8">

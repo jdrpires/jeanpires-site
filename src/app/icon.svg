@@ -1,0 +1,18 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="jpGradient" x1="38" y1="42" x2="214" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="0.5" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="ringGradient" x1="36" y1="128" x2="220" y2="128" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="0.55" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#C084FC"/>
+    </linearGradient>
+  </defs>
+  <path d="M128 20C72.77 20 28 64.77 28 120C28 175.23 72.77 220 128 220" stroke="url(#ringGradient)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M142 20C197.23 20 242 64.77 242 120C242 175.23 197.23 220 142 220" stroke="url(#ringGradient)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M118 58V157C118 181 102 196 79 196H62L76 178H82C96 178 101 170 101 158V76L118 58Z" fill="url(#jpGradient)"/>
+  <path d="M139 75H169C195 75 213 91 213 115C213 140 195 156 168 156H157V198L139 216V75ZM157 94V137H168C184 137 195 129 195 115C195 101 184 94 168 94H157Z" fill="url(#jpGradient)"/>
+</svg>

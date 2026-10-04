@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { navigation } from "@/data/navigation";
 import { MobileNav } from "@/components/mobile-nav";
@@ -12,10 +13,15 @@ export function Header() {
           className="group flex items-center gap-3 font-medium text-white"
           aria-label="Jean Pires - Home"
         >
-          <span className="grid size-8 place-items-center rounded border border-white/15 bg-white/[0.03] text-[0.72rem] tracking-[0.14em] text-slate-100 transition-colors group-hover:border-cyan-300/50">
-            JP
-          </span>
-          <span className="hidden text-sm text-slate-100 sm:inline">
+          <Image
+            src="/brand/jp-mark.svg"
+            alt=""
+            width={36}
+            height={36}
+            className="size-9"
+            aria-hidden="true"
+          />
+          <span className="hidden text-sm font-semibold uppercase tracking-[0.16em] text-slate-100 sm:inline">
             Jean Pires
           </span>
         </Link>

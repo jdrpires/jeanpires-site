@@ -1,0 +1,21 @@
+<svg width="720" height="180" viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="jpGradient" x1="20" y1="30" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="0.5" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="ringGradient" x1="12" y1="88" x2="170" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="1" stop-color="#C084FC"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(12,6) scale(.66)">
+    <path d="M128 20C72.77 20 28 64.77 28 120C28 175.23 72.77 220 128 220" stroke="url(#ringGradient)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M142 20C197.23 20 242 64.77 242 120C242 175.23 197.23 220 142 220" stroke="url(#ringGradient)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M118 58V157C118 181 102 196 79 196H62L76 178H82C96 178 101 170 101 158V76L118 58Z" fill="url(#jpGradient)"/>
+    <path d="M139 75H169C195 75 213 91 213 115C213 140 195 156 168 156H157V198L139 216V75ZM157 94V137H168C184 137 195 129 195 115C195 101 184 94 168 94H157Z" fill="url(#jpGradient)"/>
+  </g>
+  <text x="205" y="86" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="600" letter-spacing="9">JEAN PIRES</text>
+  <text x="208" y="123" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="5">TECHNOLOGY · AI · STRATEGY · IMPACT</text>
+</svg>
